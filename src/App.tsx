@@ -1,8 +1,8 @@
 function App() {
   return (
     <div className="App">
-      <header className='pt-10 text-red-500'>
-        testing
+      <header className='text-center text-5xl mt-10'>
+        Start work here
       </header>
     </div>
   );
