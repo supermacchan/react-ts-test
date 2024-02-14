@@ -1,9 +1,12 @@
+import ShoppingPanel from "./components/ShoppingPanel/ShoppingPanel";
+
 function App() {
   return (
     <div className="App">
-      <header className='text-center text-5xl mt-10'>
-        Start work here
+      <header className='text-center text-2xl my-10 font-semibold'>
+        Shopping Cart Test
       </header>
+      <ShoppingPanel />
     </div>
   );
 }

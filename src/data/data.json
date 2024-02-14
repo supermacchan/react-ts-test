@@ -1,0 +1,46 @@
+{
+    "goods": [
+        {
+            "name": "banana",
+            "price": 20,
+            "currency": "USD",
+            "measure": "kg"
+        },
+        {
+            "name": "carrot",
+            "price": 5,
+            "currency": "USD",
+            "measure": "kg"
+        },
+        {
+            "name": "apple",
+            "price": 13,
+            "currency": "USD",
+            "measure": "kg"
+        },
+        {
+            "name": "onion",
+            "price": 2,
+            "currency": "USD",
+            "measure": "kg"
+        },
+        {
+            "name": "orange",
+            "price": 25,
+            "currency": "USD",
+            "measure": "kg"
+        },
+        {
+            "name": "milk",
+            "price": 10,
+            "currency": "USD",
+            "measure": "psc"
+        },
+        {
+            "name": "bread",
+            "price": 7,
+            "currency": "USD",
+            "measure": "psc"
+        }
+    ]
+}
