@@ -1,3 +1,4 @@
 export type ToDoListProps = {
-    data: string[]
+    data: string[];
+    handleDelete: (item: string) => void;
 }

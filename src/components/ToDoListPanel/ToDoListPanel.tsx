@@ -12,12 +12,23 @@ const ToDoListPanel = () => {
         setNotes([...notes, newNote]);
     }
 
+    const removeNote = (item: string) => {
+        const index = notes.indexOf(item);
+
+        if (index >=0) {
+            const updatedNotes = [...notes];
+            updatedNotes.splice(index, 1);
+
+            setNotes([...updatedNotes]);
+        }
+    }
+
     return (
         <section className="bg-blue-100 w-[700px] min-h-[500px] mx-auto p-8 rounded-3xl">
             <h2 className="mb-5 text-blue-800 font-medium">Let's make some notes!</h2>
 
             <ToDoForm actionHandler={addNewNote} />
-            <ToDoList data={notes} />
+            <ToDoList data={notes} handleDelete={removeNote} />
         </section>
     )
 }
