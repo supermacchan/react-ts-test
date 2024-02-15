@@ -35,5 +35,10 @@
             "price": 7,
             "measure": "psc"
         }
+    ],
+    "notes": [
+        "Call my mom",
+        "Feed my cat",
+        "Get shit done"
     ]
 }

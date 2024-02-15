@@ -28,7 +28,7 @@ const ShoppingPanel = () => {
     const handleRemoveItem = (item: ShoppingItem) => {
         // locate the item we are deleting
         const itemIndex = shoppingList.findIndex(i => i.name === item.name);
-
+        
         // update the shopping list
         const updatedList = [...shoppingList];
         updatedList.splice(itemIndex, 1);
