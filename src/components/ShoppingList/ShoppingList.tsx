@@ -3,7 +3,7 @@ import CartItem from "../../components/CartItem/CartItem";
 import { ShoppingListProps } from "./ShoppingList.props";
 import { ShoppingItem } from "../../types";
 
-const ShoppingList: React.FC<ShoppingListProps> = ({ data }) => {
+const ShoppingList: React.FC<ShoppingListProps> = ({ data, handleRemove }) => {
     const [items, setItems] = useState<ShoppingItem[]>([]);
     const [amount, setAmount] = useState(0);
 
@@ -41,7 +41,12 @@ const ShoppingList: React.FC<ShoppingListProps> = ({ data }) => {
             ? <p>There's nothing in the cart yet.</p>
             : <ul className="flex flex-col gap-6">
                 {data.map(item =>
-                    <CartItem item={item} key={item.name} counter={countItemPrice}/>
+                    <CartItem 
+                        item={item} 
+                        key={item.name} 
+                        counter={countItemPrice}
+                        removeHandler={handleRemove}
+                    />
                 )}
             </ul>
             }

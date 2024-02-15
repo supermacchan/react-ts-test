@@ -25,11 +25,21 @@ const ShoppingPanel = () => {
         setShoppingList([...shoppingList, data.goods[index] ])
     }
 
+    const handleRemoveItem = (item: ShoppingItem) => {
+        // locate the item we are deleting
+        const itemIndex = shoppingList.findIndex(i => i.name === item.name);
+
+        // update the shopping list
+        const updatedList = [...shoppingList];
+        updatedList.splice(itemIndex, 1);
+        setShoppingList([...updatedList]);
+    }
+
     return (
         <section className="bg-pink-100 w-[700px] min-h-[500px] mx-auto p-8 rounded-3xl">
             <h2 className="mb-5 text-pink-800 font-medium">Let's do some shopping!</h2>
             <Select actionHandler={updateShoppingList} />
-            <ShoppingList data={shoppingList} />
+            <ShoppingList data={shoppingList} handleRemove={handleRemoveItem}/>
         </section>
     )
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { CartItemProps } from "./CartItem.props";
 
-const CartItem: React.FC<CartItemProps> = ({ item, counter }) => {
+const CartItem: React.FC<CartItemProps> = ({ item, counter, removeHandler }) => {
     const [quantity, setQuantity] = useState(1);
 
     const updateQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,13 @@ const CartItem: React.FC<CartItemProps> = ({ item, counter }) => {
                 />
                 <p>{item.measure}</p>
            </div>
-           <button type="button" className="text-xs">Remove</button>
+           <button 
+            type="button" 
+            className="text-xs" 
+            onClick={() => removeHandler(item)}
+            >
+                Remove
+            </button>
         </li>
     )
 }
