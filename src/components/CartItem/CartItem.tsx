@@ -12,7 +12,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, counter }) => {
     }
     
     return (
-        <li className="grid grid-cols-2 items-center w-[280px]">
+        <li className="grid grid-cols-3 items-center w-[280px]">
            <p>{item.name}</p>
            <div className="flex gap-4">
             <input 
@@ -27,7 +27,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, counter }) => {
                 />
                 <p>{item.measure}</p>
            </div>
-           
+           <button type="button" className="text-xs">Remove</button>
         </li>
     )
 }

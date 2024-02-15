@@ -10,6 +10,12 @@ const ShoppingPanel = () => {
     const [shoppingList, setShoppingList] = useState<ShoppingItem[]>([]);
 
     const updateShoppingList = (itemName: string) => {
+        const included = shoppingList.findIndex(item => item.name === itemName);
+
+        if (included >=0) {
+            return;
+        }
+
         const index = data.goods.findIndex(item => item.name === itemName);
         setShoppingList([...shoppingList, data.goods[index] ])
     }
