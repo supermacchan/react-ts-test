@@ -15,7 +15,7 @@ const ShoppingPanel = () => {
     }
 
     return (
-        <section className="bg-pink-100 w-[700px] mx-auto p-8 rounded-3xl">
+        <section className="bg-pink-100 w-[700px] min-h-[500px] mx-auto p-8 rounded-3xl">
             <h2 className="mb-5 text-pink-800 font-medium">Let's do some shopping!</h2>
             <Select actionHandler={updateShoppingList} />
             <ShoppingList data={shoppingList} />
