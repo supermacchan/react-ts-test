@@ -9,13 +9,22 @@ const ToDoListPanel = () => {
     const [notes, setNotes] = useState<string[]>(data.notes);
 
     const addNewNote = (newNote: string) => {
-        setNotes([...notes, newNote]);
+        const index = notes.findIndex(i => i.toLowerCase() === newNote.toLowerCase());
+
+        if (index < 0) {
+            setNotes([...notes, newNote]);
+        } else {
+            const updatedNotes = [...notes];
+            updatedNotes.splice(index, 1);
+
+            setNotes([...updatedNotes, newNote]);
+        }
     }
 
     const removeNote = (item: string) => {
-        const index = notes.indexOf(item);
+        const index = notes.findIndex(i => i.toLowerCase() === item.toLowerCase());
 
-        if (index >=0) {
+        if (index >= 0) {
             const updatedNotes = [...notes];
             updatedNotes.splice(index, 1);
 
