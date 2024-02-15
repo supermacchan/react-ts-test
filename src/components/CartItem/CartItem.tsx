@@ -2,11 +2,13 @@ import { useState } from "react";
 
 import { CartItemProps } from "./CartItem.props";
 
-const CartItem: React.FC<CartItemProps> = ({ item }) => {
-    const [quantity, setQuantity] = useState("1")
+const CartItem: React.FC<CartItemProps> = ({ item, counter }) => {
+    const [quantity, setQuantity] = useState(1);
 
     const updateQuantity = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setQuantity(e.target.value);
+        setQuantity(Number(e.target.value));
+
+        counter(item, Number(e.target.value));
     }
     
     return (
