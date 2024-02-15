@@ -18,7 +18,7 @@ const CartItem: React.FC<CartItemProps> = ({ item, counter }) => {
             <input 
                     type="number" 
                     name="quantity" 
-                    min="0" 
+                    min="1" 
                     max="100" 
                     step="1"
                     value={quantity}
