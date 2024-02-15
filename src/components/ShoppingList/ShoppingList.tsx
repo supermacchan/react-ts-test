@@ -11,20 +11,26 @@ const ShoppingList: React.FC<ShoppingListProps> = ({ data }) => {
         setItems(data);
     }, [data]);
 
+    // counts the price as the items change
     useEffect(() => {
         const price = items.reduce((acc, item) => acc + item.price, 0);
         setAmount(price);
     }, [items])
 
+    // one item price count
     const countItemPrice = (item: ShoppingItem, quantity: number): void => {
         const itemPrice = item.price * quantity;
         const itemIndex = items.findIndex(i => i.name === item.name);
 
         if (itemIndex >= 0) {
+            // update the item price
             const updatedItem = {...items[itemIndex], price: itemPrice};
+
+            // update the item in the items list
             const updatedItems = [...items];
             updatedItems.splice(itemIndex, 1, updatedItem);
 
+            // set the new items list
             setItems([...updatedItems]);
         }
     }

@@ -12,6 +12,7 @@ const Select:React.FC<SelectProps> = ({ actionHandler }) => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        // update shopping list
         actionHandler(selectedValue);
     }
     return (

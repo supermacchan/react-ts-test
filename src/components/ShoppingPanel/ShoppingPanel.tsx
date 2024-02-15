@@ -11,13 +11,16 @@ const ShoppingPanel = () => {
     const [shoppingList, setShoppingList] = useState<ShoppingItem[]>([]);
 
     const updateShoppingList = (itemName: string) => {
+        // check if the item is already selected
         const included = shoppingList.findIndex(item => item.name === itemName);
 
+        // if selected - error notification & do nothing
         if (included >=0) {
             toast.error("The item is already in the cart.")
             return;
         }
 
+        // if not - add to the list
         const index = data.goods.findIndex(item => item.name === itemName);
         setShoppingList([...shoppingList, data.goods[index] ])
     }
