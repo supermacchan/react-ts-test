@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 import Select from "../../components/Select/Select";
 import ShoppingList from "../../components/ShoppingList/ShoppingList";
@@ -13,6 +14,7 @@ const ShoppingPanel = () => {
         const included = shoppingList.findIndex(item => item.name === itemName);
 
         if (included >=0) {
+            toast.error("The item is already in the cart.")
             return;
         }
 

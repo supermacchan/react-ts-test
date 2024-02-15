@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import ShoppingPanel from "./components/ShoppingPanel/ShoppingPanel";
 
 function App() {
@@ -7,6 +8,11 @@ function App() {
         Shopping Cart Test
       </header>
       <ShoppingPanel />
+
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
   );
 }
