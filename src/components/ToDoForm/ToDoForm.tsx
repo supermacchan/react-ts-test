@@ -12,6 +12,7 @@ const ToDoForm:React.FC<ToDoFormProps> = ({ actionHandler }) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         actionHandler(inputValue);
+        setInputValue("");
     }
 
     return (
