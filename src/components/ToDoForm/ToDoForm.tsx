@@ -23,6 +23,7 @@ const ToDoForm:React.FC<ToDoFormProps> = ({ actionHandler }) => {
                 className="py-2 px-3 rounded-md w-[500px]"
                 onChange={handleChange}
                 value={inputValue}
+                placeholder="Input note..."
             />
 
             <button 
